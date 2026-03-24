@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofia | Enterprise AI</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body>
+
+    <div id="login-screen" class="screen active">
+        <div class="login-card">
+            <h1>Sofia 🧠</h1>
+            <p>Sign in to sync your AI study history across all devices.</p>
+            <button id="login-btn" class="google-btn">Sign in with Google</button>
+        </div>
+    </div>
+
+    <div id="app-screen" class="screen hidden">
+        
+        <aside class="sidebar" id="app-sidebar">
+            <div class="user-profile">
+                <img id="user-photo" src="" alt="Profile">
+                <div class="user-info">
+                    <h3 id="user-name">Student</h3>
+                    <button id="logout-btn">Sign Out</button>
+                </div>
+            </div>
+            
+            <button onclick="createNewChat()" class="new-chat-btn">+ New Chat</button>
+            
+            <div class="chat-list-container">
+                <p class="history-label">Recent Chats</p>
+                <ul id="chat-history-list">
+                    </ul>
+            </div>
+        </aside>
+
+        <main class="chat-container">
+            <div class="chat-header">
+                <button id="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+                <h2 id="current-chat-title">New Session</h2>
+            </div>
+            
+            <div class="chat-box" id="chat-box">
+                </div>
+
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Message Sofia..." autocomplete="off">
+                <button class="send-btn" onclick="sendMessage()">Send</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
